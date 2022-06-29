@@ -1,0 +1,52 @@
+{"document": {
+        "header": {
+            "message_id": "c7bdf779-144b-4e5f-b6f0-9b361ddaf6c9",
+            "creation_date": "2022-04-08T18:25:43-04:00",
+            "sender": {
+                "fin_id_schema": "SHINKANSEN",
+                "fin_id": "BUK"
+            },
+            "receiver": {
+                "fin_id_schema": "SHINKANSEN",
+                "fin_id": "SHINKANSEN"
+            }
+        },
+        "transactions": [
+            {
+                "transaction_type": "payout",
+                "transaction_id": "ee19538c-3a23-47c9-ba8e-472a7500de7c",
+                "currency": "CLP",
+                "amount": "30000",
+                "execution_date": "2022-04-11T10:30:00-03:00",
+                "description": "Salary payment",
+                "debtor": {
+                    "name": "Buk SpA",
+                    "email": "romulo.gallegos@shinkasen.finance",
+                    "identification": {
+                        "id_schema": "CLID",
+                        "id": "12383287-6"
+                    },
+                    "financial_institution": {
+                        "fin_id_schema": "SHINKANSEN",
+                        "fin_id": "BICE"
+                    },
+                    "account_type" : "debit",
+                    "account": "12335455"
+                },
+                "creditor": {
+                    "name": "Romulo Gallegos",
+                    "email": "romulo.gallegos@shinkasen.finance",
+                    "identification": {
+                        "id_schema": "CLID",
+                        "id": "12383287-6"
+                    },
+                    "financial_institution": {
+                        "fin_id_schema": "SHINKANSEN",
+                        "fin_id": "SCOTIABANKCL"
+                    },
+                    "account_type" : "debit",
+                    "account": "12335455"
+                }
+            }
+        ]
+    }}
