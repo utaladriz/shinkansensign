@@ -7,7 +7,7 @@ defmodule ValidateTest do
   require OK
 
   test "firma y validación" do
-
+    :ets.insert(:jose_jwa, {{:rsa_sign, :rsa_pkcs1_pss_padding}, {:public_key, [rsa_padding: :rsa_pkcs1_pss_padding, rsa_pss_saltlen: -1]}})
     {:ok, {valid_dettached, valid_compact}} =  OK.for do
       payload <- File.read("test.json")
       header <- File.read("test_header.txt")
@@ -18,6 +18,7 @@ defmodule ValidateTest do
     after
       [protected | [signature]] = String.split(header,"..")
       valid_compact = IO.inspect(JWS.verify(public_key, compact)) |> elem(0)
+      #valid_dettached = IO.inspect(JWS.verify(public_key, { %{alg: :jose_jws_alg_rsa_pkcs1_v1_5}, %{"payload" => Base.encode64(payload), "protected" => protected, "signature" => signature}})) |> elem(0)
       valid_dettached = IO.inspect(JWS.verify(public_key, { %{alg: :jose_jws_alg_rsa_pss}, %{"payload" => Base.encode64(payload), "protected" => protected, "signature" => signature}})) |> elem(0)
       {valid_dettached, valid_compact}
     end

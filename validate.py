@@ -20,7 +20,7 @@ with open("test.json", "r") as json_file:
 jwstoken = jws.JWS()
 jwstoken.deserialize(header_str)
 public_key = jwk.JWK.from_pem(testcert.public_key().public_bytes(Encoding.PEM, PublicFormat.SubjectPublicKeyInfo))
-jwstoken.verify(public_key, alg="PS256", detached_payload=json_str.encode('utf-8'))
+jwstoken.verify(public_key, alg="PS256", detached_payload=json_str)
 
 
 

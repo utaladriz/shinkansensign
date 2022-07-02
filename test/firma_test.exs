@@ -8,7 +8,7 @@ defmodule FirmaTest do
   test "firma y validación" do
     payload = ~s'{"data":"test"}'
 
-
+    :ets.insert(:jose_jwa, {{:rsa_sign, :rsa_pkcs1_pss_padding}, {:public_key, [rsa_padding: :rsa_pkcs1_pss_padding, rsa_pss_saltlen: -1]}})
     {:ok, compact} = OK.for do
       private <- File.read("testkey.pem")
       private_jwk = JWK.from_pem(private)

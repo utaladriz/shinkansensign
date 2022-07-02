@@ -24,6 +24,7 @@ defmodule Firma.MixProject do
       {:ok, "~> 2.3"},
       {:jason, "~> 1.3"},
       {:jose, "~> 1.11"},
+      {:joken, "~> 2.5.0"},
       {:x509, "~> 0.8"}
     ]
   end
